@@ -19,7 +19,7 @@
 
 #include "Runtime.h"
 #include "GarbageCollection.h"
-#include "ShadowTrace.h"
+#include "Tracer.h"
 
 // C++
 #if __has_include(<filesystem>)
@@ -410,7 +410,6 @@ void _sym_notify_ret(uintptr_t site_id) {
 }
 
 void _sym_notify_basic_block(uintptr_t site_id) {
-  dumpSymbolicState();
   g_call_stack_manager.visitBasicBlock(site_id);
 }
 
