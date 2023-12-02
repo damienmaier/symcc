@@ -494,3 +494,21 @@ void _sym_trace_execution(uintptr_t pc) { Tracer::traceStep(pc);
 void _sym_finalize_tracing() {
   Tracer::writeTraceToDisk();
 }
+
+SymExpr _sym_build_rotate_left(SymExpr a, SymExpr b){
+  uint8_t bits = _sym_bits_helper(a);
+  return _sym_build_or(
+      _sym_build_shift_left(a, b),
+      _sym_build_logical_shift_right(
+          a,
+          _sym_build_sub(_sym_build_integer(bits, bits), b)));
+}
+
+SymExpr _sym_build_rotate_right(SymExpr a, SymExpr b){
+  uint8_t bits = _sym_bits_helper(a);
+  return _sym_build_or(
+      _sym_build_logical_shift_right(a, b),
+      _sym_build_shift_left(
+          a,
+          _sym_build_sub(_sym_build_integer(bits, bits), b)));
+}

@@ -74,6 +74,8 @@ SymExpr _sym_build_logical_shift_right(SymExpr a, SymExpr b);
 SymExpr _sym_build_arithmetic_shift_right(SymExpr a, SymExpr b);
 SymExpr _sym_build_funnel_shift_left(SymExpr a, SymExpr b, SymExpr c);
 SymExpr _sym_build_funnel_shift_right(SymExpr a, SymExpr b, SymExpr c);
+SymExpr _sym_build_rotate_left(SymExpr a, SymExpr b);
+SymExpr _sym_build_rotate_right(SymExpr a, SymExpr b);
 SymExpr _sym_build_abs(SymExpr expr);
 
 /*
