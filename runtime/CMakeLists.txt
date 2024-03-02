@@ -37,6 +37,8 @@ set(SHARED_RUNTIME_SOURCES
   ${CMAKE_CURRENT_SOURCE_DIR}/Tracer.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/GarbageCollection.cpp)
 
+find_package(nlohmann_json REQUIRED)
+
 if (${QSYM_BACKEND})
   add_subdirectory(qsym_backend)
 else()
