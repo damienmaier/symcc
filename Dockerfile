@@ -32,6 +32,7 @@ RUN apt-get update \
         python2 \
         python3-pip \
         zlib1g-dev \
+        nlohmann-json3-dev \
     && rm -rf /var/lib/apt/lists/*
 RUN pip3 install lit
 
